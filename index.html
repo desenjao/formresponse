@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marketing na Prática — EitaDevis e Lidera</title>
+  <style>
+    :root {
+      --primary: #ff7a00;
+      --primary-dark: #e06600;
+      --primary-light: rgba(255, 122, 0, 0.15);
+      --secondary: #7b61ff;
+      --secondary-light: rgba(123, 97, 255, 0.15);
+      --accent: #00d9ff;
+      --accent-light: rgba(0, 217, 255, 0.15);
+      --dark: #1a1a2e;
+      --darker: #0d0d1a;
+      --white: #ffffff;
+      --light: #f8f9ff;
+      --muted: #8c8ca1;
+      --success: #00c853;
+      --error: #ff1744;
+      --card-bg: rgba(255, 255, 255, 0.85);
+      --card-border: rgba(255, 255, 255, 0.5);
+      font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+      color: black;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 15% 50%, rgba(123, 97, 255, 0.25) 0%, transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(255, 122, 0, 0.25) 0%, transparent 25%),
+        radial-gradient(circle at 50% 80%, rgba(0, 217, 255, 0.25) 0%, transparent 25%);
+      z-index: -1;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 30px;
+      border: 1px solid var(--card-border);
+      box-shadow: 
+        0 10px 35px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      margin: 20px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+      border-radius: 10px 10px 0 0;
+    }
+
+    header {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 800;
+      font-size: 22px;
+      box-shadow: 0 8px 25px rgba(255, 122, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+      transform: rotate(30deg);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+
+    p.lead {
+      margin: 8px 0 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .summary {
+      background: linear-gradient(90deg, var(--primary-light), var(--secondary-light));
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .summary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    }
+
+    .summary strong {
+      color: var(--primary);
+      font-size: 16px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .small {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    form .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 25px;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 18px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+
+    .section-title::before {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 10px var(--primary);
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    label.field {
+      display: block;
+      font-size: 14px;
+      color: var(--dark);
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"], input[type="email"], select, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      margin-top: 6px;
+      font-size: 15px;
+      background: rgba(255, 255, 255, 0.8);
+      transition: all 0.3s ease;
+      color: var(--dark);
+    }
+
+    input[type="text"]:focus, input[type="email"]:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-light);
+      background: var(--white);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .question {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .question:last-of-type {
+      border-bottom: none;
+    }
+
+    .question h3 {
+      margin: 0 0 12px 0;
+      font-size: 16px;
+      color: var(--dark);
+      font-weight: 600;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 10px;
+      border-radius: 10px;
+      transition: background 0.2s ease;
+    }
+
+    .option:hover {
+      background: rgba(255, 122, 0, 0.05);
+    }
+
+    .option input[type="radio"], .option input[type="checkbox"] {
+      margin-top: 3px;
+      accent-color: var(--primary);
+    }
+
+    .actions {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 14px 24px;
+      border-radius: 12px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    button.primary {
+      background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+      color: var(--white);
+      box-shadow: 0 5px 15px rgba(255, 122, 0, 0.3);
+    }
+
+    button.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 122, 0, 0.4);
+    }
+
+    button.ghost {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary-light);
+    }
+
+    button.ghost:hover {
+      background: var(--primary-light);
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .success-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 10, 20, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .success-content {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 40px;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+      width: 100%;
+      animation: scaleIn 0.5s ease;
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--success), #00e676);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: white;
+      font-size: 40px;
+    }
+
+    .success-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, var(--success), #00e676);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .success-message {
+      color: var(--muted);
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .success-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .error {
+      display: none;
+      background: rgba(255, 23, 68, 0.1);
+      color: var(--error);
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 23, 68, 0.2);
+      margin-bottom: 15px;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes scaleIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .field-row {
+        grid-template-columns: 1fr;
+      }
+      
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+      
+      .actions, .footer {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .success-actions {
+        flex-direction: column;
+      }
+      
+      body {
+        padding: 10px;
+      }
+      
+      .container {
+        padding: 20px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <div class="logo">MNPrá</div>
+      <div>
+      <h1>Marketing na Prática — EitaDevis e Lidera</h1>
+<p class="lead">Questionário estratégico — defina os pilares do curso digital e sua execução</p>
+</div>
+</header>
+
+<div class="summary">
+  <strong>Por que estas perguntas são importantes?</strong>
+  <p class="small" style="margin-top:8px;">
+    Este questionário vai orientar as decisões estratégicas do projeto: desde o público-alvo e formato do curso até a captação de alunos e estrutura de suporte. Suas respostas serão a base do nosso plano de ação.
+  </p>
+</div>
+
+<div class="error" id="errorBox">Ocorreu um erro ao enviar — veja o console para detalhes.</div>
+
+<form id="quizForm" class="card" autocomplete="off">
+  <div class="section-title"><h2>Dados do Respondente</h2></div>
+
+  <div class="field-row">
+    <div>
+      <label class="field">Nome</label>
+      <input id="name" name="name" type="text" placeholder="Seu nome completo" required />
+    </div>
+    <div>
+      <label class="field">Nome da Empresa</label>
+      <input id="company" name="company" type="text" placeholder="Nome da sua empresa" required />
+    </div>
+  </div>
+
+  <div class="section-title"><h2>Perguntas Estratégicas (responda com atenção)</h2></div>
+
+  <!-- Question 1 - single choice -->
+  <div class="question" id="q1">
+    <h3>1) Qual é o principal objetivo da versão digital do curso?</h3>
+    <div class="options">
+      <label class="option"><input type="radio" name="q1" value="Escalonar nacionalmente o conhecimento" required /> A) Escalonar nacionalmente o conhecimento</label>
+      <label class="option"><input type="radio" name="q1" value="Gerar renda recorrente" /> B) Gerar renda recorrente</label>
+      <label class="option"><input type="radio" name="q1" value="Captar leads para consultorias" /> C) Captar leads para consultorias</label>
+      <label class="option"><input type="radio" name="q1" value="Aumentar autoridade de marca" /> D) Aumentar autoridade de marca</label>
+      <label class="option"><input type="radio" name="q1" value="Múltiplos objetivos (escala + renda + autoridade)" /> E) Múltiplos objetivos (escala + renda + autoridade)</label>
+    </div>
+  </div>
+
+  <!-- Question 2 - single choice -->
+  <div class="question" id="q2">
+    <h3>2) Qual modelo de negócio inicial faz mais sentido?</h3>
+    <div class="options">
+      <label class="option"><input type="radio" name="q2" value="Curso pago único (Hotmart)" required /> A) Curso pago único (Hotmart)</label>
+      <label class="option"><input type="radio" name="q2" value="Assinatura mensal (YouTube Membros)" /> B) Assinatura mensal (YouTube Membros)</label>
+      <label class="option"><input type="radio" name="q2" value="Híbrido: curso + comunidade" /> C) Híbrido: curso + comunidade</label>
+      <label class="option"><input type="radio" name="q2" value="Turmas fechadas com inscrições periódicas" /> D) Turmas fechadas com inscrições periódicas</label>
+      <label class="option"><input type="radio" name="q2" value="Acesso perpétuo desde o início" /> E) Acesso perpétuo desde o início</label>
+    </div>
+  </div>
+
+  <!-- Question 3 - multiple choice -->
+  <div class="question" id="q3">
+    <h3>3) Quais formatos de conteúdo serão prioridade?</h3>
+    <div class="options">
+      <label class="option"><input type="checkbox" name="q3[]" value="Vídeos curtos (5-15min)" /> A) Vídeos curtos (5-15min)</label>
+      <label class="option"><input type="checkbox" name="q3[]" value="Lives e sessões de Q&A" /> B) Lives e sessões de Q&A</label>
+      <label class="option"><input type="checkbox" name="q3[]" value="Materiais práticos (planilhas, templates)" /> C) Materiais práticos (planilhas, templates)</label>
+      <label class="option"><input type="checkbox" name="q3[]" value="Estudos de caso reais" /> D) Estudos de caso reais</label>
+      <label class="option"><input type="checkbox" name="q3[]" value="Comunidade exclusiva (Telegram/WhatsApp)" /> E) Comunidade exclusiva (Telegram/WhatsApp)</label>
+    </div>
+  </div>
+
+  <!-- Question 4 - single -->
+  <div class="question" id="q4">
+    <h3>4) Qual o nível de produção inicial ideal?</h3>
+    <div class="options">
+      <label class="option"><input type="radio" name="q4" value="Produção ágil (qualidade básica mas eficaz)" required /> A) Produção ágil (qualidade básica mas eficaz)</label>
+      <label class="option"><input type="radio" name="q4" value="Semi-profissional (boa edição e iluminação)" /> B) Semi-profissional (boa edição e iluminação)</label>
+      <label class="option"><input type="radio" name="q4" value="Produção profissional em estúdio" /> C) Produção profissional em estúdio</label>
+      <label class="option"><input type="radio" name="q4" value="Misto (conteúdo simples + alguns vídeos profissionais)" /> D) Misto (conteúdo simples + alguns vídeos profissionais)</label>
+      <label class="option"><input type="radio" name="q4" value="Evolutivo (começar simples e melhorar com o tempo)" /> E) Evolutivo (começar simples e melhorar com o tempo)</label>
+    </div>
+  </div>
+
+  <!-- Question 5 - multiple -->
+  <div class="question" id="q5">
+    <h3>5) Quais canais de captação serão utilizados?</h3>
+    <div class="options">
+      <label class="option"><input type="checkbox" name="q5[]" value="Instagram (conteúdo orgânico + Reels)" /> A) Instagram (conteúdo orgânico + Reels)</label>
+      <label class="option"><input type="checkbox" name="q5[]" value="YouTube (conteúdo gratuito + comunidade)" /> B) YouTube (conteúdo gratuito + comunidade)</label>
+      <label class="option"><input type="checkbox" name="q5[]" value="Anúncios pagos (Meta/Google)" /> C) Anúncios pagos (Meta/Google)</label>
+      <label class="option"><input type="checkbox" name="q5[]" value="Parcerias e afiliados" /> D) Parcerias e afiliados</label>
+      <label class="option"><input type="checkbox" name="q5[]" value="E-mail marketing e webinars" /> E) E-mail marketing e webinars</label>
+    </div>
+  </div>
+
+  <!-- Question 6 - single -->
+  <div class="question" id="q6">
+    <h3>6) Qual modelo de suporte ao aluno será adotado?</h3>
+    <div class="options">
+      <label class="option"><input type="radio" name="q6" value="Apenas conteúdo gravado" required /> A) Apenas conteúdo gravado</label>
+      <label class="option"><input type="radio" name="q6" value="Grupo de suporte no Telegram/WhatsApp" /> B) Grupo de suporte no Telegram/WhatsApp</label>
+      <label class="option"><input type="radio" name="q6" value="Lives mensais de tirar dúvidas" /> C) Lives mensais de tirar dúvidas</label>
+      <label class="option"><input type="radio" name="q6" value="Mentorias em grupo (como upsell)" /> D) Mentorias em grupo (como upsell)</label>
+      <label class="option"><input type="radio" name="q6" value="Suporte híbrido (grupo + lives eventuais)" /> E) Suporte híbrido (grupo + lives eventuais)</label>
+    </div>
+  </div>
+
+  <!-- Question 7 - multiple -->
+  <div class="question" id="q7">
+    <h3>7) Quais métricas serão priorizadas para medir sucesso?</h3>
+    <div class="options">
+      <label class="option"><input type="checkbox" name="q7[]" value="Número de matrículas" /> A) Número de matrículas</label>
+      <label class="option"><input type="checkbox" name="q7[]" value="Taxa de conclusão do curso" /> B) Taxa de conclusão do curso</label>
+      <label class="option"><input type="checkbox" name="q7[]" value="Retorno sobre investimento em anúncios" /> C) Retorno sobre investimento em anúncios</label>
+      <label class="option"><input type="checkbox" name="q7[]" value="Depoimentos e casos de sucesso" /> D) Depoimentos e casos de sucesso</label>
+      <label class="option"><input type="checkbox" name="q7[]" value="Satisfação dos alunos (NPS)" /> E) Satisfação dos alunos (NPS)</label>
+    </div>
+  </div>
+
+  <!-- Question 8 - single -->
+  <div class="question" id="q8">
+    <h3>8) Qual a situação atual do material do curso presencial?</h3>
+    <div class="options">
+      <label class="option"><input type="radio" name="q8" value="Completo e pronto para adaptação" required /> A) Completo e pronto para adaptação</label>
+      <label class="option"><input type="radio" name="q8" value="Parcialmente pronto (slides e exercícios)" /> B) Parcialmente pronto (slides e exercícios)</label>
+      <label class="option"><input type="radio" name="q8" value="Apenas roteiro e estrutura" /> C) Apenas roteiro e estrutura</label>
+      <label class="option"><input type="radio" name="q8" value="Precisa ser reformulado" /> D) Precisa ser reformulado</label>
+      <label class="option"><input type="radio" name="q8" value="Inexistente (será criado do zero)" /> E) Inexistente (será criado do zero)</label>
+    </div>
+  </div>
+
+  <!-- Question 9 - multiple -->
+  <div class="question" id="q9">
+    <h3>9) Quais recursos humanos serão necessários inicialmente?</h3>
+    <div class="options">
+      <label class="option"><input type="checkbox" name="q9[]" value="Editor de vídeo" /> A) Editor de vídeo</label>
+      <label class="option"><input type="checkbox" name="q9[]" value="Designer (artes e thumbnails)" /> B) Designer (artes e thumbnails)</label>
+      <label class="option"><input type="checkbox" name="q9[]" value="Especialista em tráfego pago" /> C) Especialista em tráfego pago</label>
+      <label class="option"><input type="checkbox" name="q9[]" value="Produtor/assistente de gravações" /> D) Produtor/assistente de gravações</label>
+      <label class="option"><input type="checkbox" name="q9[]" value="Copywriter (textos de vendas)" /> E) Copywriter (textos de vendas)</label>
+    </div>
+  </div>
+
+  <!-- Question 10 - single -->
+  <div class="question" id="q10">
+    <h3>10) Qual a principal transformação prometida pelo curso?</h3>
+    <div class="options">
+      <label class="option"><input type="radio" name="q10" value="Primeiros clientes em 30 dias" required /> A) Primeiros clientes em 30 dias</label>
+      <label class="option"><input type="radio" name="q10" value="Dobrar o volume de leads em 60 dias" /> B) Dobrar o volume de leads em 60 dias</label>
+      <label class="option"><input type="radio" name="q10" value="Funil de vendas estruturado e funcionando" /> C) Funil de vendas estruturado e funcionando</label>
+      <label class="option"><input type="radio" name="q10" value="Autonomia na gestão do marketing digital" /> D) Autonomia na gestão do marketing digital</label>
+      <label class="option"><input type="radio" name="q10" value="Outra transformação específica" /> E) Outra transformação específica</label>
+    </div>
+  </div>
+
+  <!-- Question 11 - multiple -->
+  <div class="question" id="q11">
+    <h3>11) Quais bônus aumentarão a taxa de conversão?</h3>
+    <div class="options">
+      <label class="option"><input type="checkbox" name="q11[]" value="Templates de anúncios e criativos" /> A) Templates de anúncios e criativos</label>
+      <label class="option"><input type="checkbox" name="q11[]" value="Planilhas de controle e ROI" /> B) Planilhas de controle e ROI</label>
+      <label class="option"><input type="checkbox" name="q11[]" value="Sessão de análise de funil (em grupo)" /> C) Sessão de análise de funil (em grupo)</label>
+      <label class="option"><input type="checkbox" name="q11[]" value="Aula extra sobre copywriting" /> D) Aula extra sobre copywriting</label>
+      <label class="option"><input type="checkbox" name="q11[]" value="Gravações das turmas presenciais" /> E) Gravações das turmas presenciais</label>
+    </div>
+  </div>
+
+  <!-- Question 12 - single -->
+  <div class="question" id="q12">
+    <h3>12) Qual a estratégia com afiliados?</h3>
+    <div class="options">
+      <label class="option"><input type="radio" name="q12" value="Lançar com afiliados pagos desde o início" required /> A) Lançar com afiliados pagos desde o início</label>
+      <label class="option"><input type="radio" name="q12" value">Testar com microinfluencers primeiro" /> B) Testar com microinfluencers primeiro</label>
+      <label class="option"><input type="radio" name="q12" value="Não usar afiliados inicialmente" /> C) Não usar afiliados inicialmente</label>
+      <label class="option"><input type="radio" name="q12" value="Acionar afiliados após validação do produto" /> D) Acionar afiliados após validação do produto</label>
+      <label class="option"><input type="radio" name="q12" value="Ainda em avaliação" /> E) Ainda em avaliação</label>
+    </div>
+  </div>
+
+  <!-- Question 13 - multiple -->
+  <div class="question" id="q13">
+    <h3>13) Quais riscos devem ser priorizados na mitigação?</h3>
+    <div class="options">
+      <label class="option"><input type="checkbox" name="q13[]" value="Baixa taxa de conversão" /> A) Baixa taxa de conversão</label>
+      <label class="option"><input type="checkbox" name="q13[]" value="Falta de engajamento dos alunos" /> B) Falta de engajamento dos alunos</label>
+      <label class="option"><input type="checkbox" name="q13[]" value="Problemas técnicos na entrega" /> C) Problemas técnicos na entrega</label>
+      <label class="option"><input type="checkbox" name="q13[]" value="Custo de aquisição muito alto" /> D) Custo de aquisição muito alto</label>
+      <label class="option"><input type="checkbox" name="q13[]" value="Falta de provas sociais no início" /> E) Falta de provas sociais no início</label>
+    </div>
+  </div>
+
+  <!-- Question 14 - single -->
+  <div class="question" id="q14">
+    <h3>14) Qual o prazo realista para o primeiro lançamento?</h3>
+    <div class="options">
+      <label class="option"><input type="radio" name="q14" value="30 dias (MVP rápido)" required /> A) 30 dias (MVP rápido)</label>
+      <label class="option"><input type="radio" name="q14" value="60 dias (lançamento planejado)" /> B) 60 dias (lançamento planejado)</label>
+      <label class="option"><input type="radio" name="q14" value="90 dias (estrutura completa)" /> C) 90 dias (estrutura completa)</label>
+      <label class="option"><input type="radio" name="q14" value="120 dias (produção robusta)" /> D) 120 dias (produção robusta)</label>
+      <label class="option"><input type="radio" name="q14" value="Outro prazo personalizado" /> E) Outro prazo personalizado</label>
+    </div>
+  </div>
+
+  <!-- Question 15 - open field -->
+  <div class="question" id="q15">
+    <h3>15) Observações adicionais ou detalhes sobre as opções selecionadas</h3>
+    <textarea id="q15" name="q15" rows="4" placeholder="Detalhe suas respostas, contextos específicos ou preocupações relevantes..."></textarea>
+  </div>
+
+      <div class="actions">
+        <button class="primary" type="submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
+          </svg>
+          Enviar respostas
+        </button>
+        <button class="ghost" type="button" id="resetBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+            <path d="M3 3v5h5"></path>
+          </svg>
+          Limpar formulário
+        </button>
+      </div>
+
+      <div class="footer">
+        <div class="note">As respostas serão gravadas em Google Sheets via SheetDB — substitua a URL no script.</div>
+        <div class="small">Design futurista • Cores: laranja, roxo e azul</div>
+      </div>
+    </form>
+  </div>
+
+  <div class="success-overlay" id="successOverlay">
+    <div class="success-content">
+      <div class="success-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <h2 class="success-title">Formulário Enviado!</h2>
+      <p class="success-message">Suas respostas foram registradas com sucesso. Obrigado por compartilhar suas informações conosco.</p>
+      <div class="success-actions">
+        <button class="primary" id="newResponseBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+            <path d="M3 3v5h5"></path>
+          </svg>
+          Nova Resposta
+        </button>
+        <button class="ghost" id="closeSuccessBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      // ---------- ATENÇÃO ----------
+      // Substitua a variável abaixo pela sua URL do SheetDB (ex.: https://sheetdb.io/api/v1/SEU_ID)
+      // Veja a documentação do SheetDB: https://sheetdb.io/docs
+      const SHEETDB_URL = "https://sheetdb.io/api/v1/cwwkws8sdaoql"; // <-- TROQUE AQUI
+
+      const form = document.getElementById('quizForm');
+      const successOverlay = document.getElementById('successOverlay');
+      const errorBox = document.getElementById('errorBox');
+      const resetBtn = document.getElementById('resetBtn');
+      const newResponseBtn = document.getElementById('newResponseBtn');
+      const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+
+      function showSuccess(){
+        successOverlay.style.display = 'flex';
+        errorBox.style.display = 'none';
+      }
+      
+      function hideSuccess(){
+        successOverlay.style.display = 'none';
+      }
+      
+      function showError(msg){
+        errorBox.style.display = 'block';
+        errorBox.textContent = msg || 'Ocorreu um erro ao enviar — veja o console para detalhes.';
+      }
+
+      function gatherFormData(formEl){
+        const fd = new FormData(formEl);
+        // Basic fields
+        const payload = {
+          nome: (fd.get('name') || '').trim(),
+          empresa: (fd.get('company') || '').trim(),
+          timestamp: new Date().toISOString()
+        };
+
+        // Questions single-choice (radio)
+        for(let i=1;i<=14;i++){
+          const key = 'q' + i;
+          const val = fd.get(key) || '';
+          payload[key] = val;
+        }
+        // q15 - observações
+        payload.q15 = (fd.get('q15') || '').trim();
+
+        // For the checkbox groups: q3, q5, q7, q9, q11, q13
+        // We'll collect all checked values as comma-separated strings
+        const checkboxGroups = ['q3[]','q5[]','q7[]','q9[]','q11[]','q13[]'];
+        const mapNames = { 'q3[]':'q3', 'q5[]':'q5', 'q7[]':'q7', 'q9[]':'q9', 'q11[]':'q11', 'q13[]':'q13' };
+        checkboxGroups.forEach(name=>{
+          const values = [];
+          for(const pair of fd.entries()){
+            if(pair[0] === name){
+              values.push(pair[1]);
+            }
+          }
+          payload[mapNames[name]] = values.join('; ') || '';
+        });
+
+        return payload;
+      }
+
+      async function submitToSheetDB(data){
+        if(!SHEETDB_URL || SHEETDB_URL.includes('SEU_ID_AQUI')){
+          throw new Error('Você precisa configurar a constante SHEETDB_URL no script com sua URL do SheetDB.');
+        }
+
+        // SheetDB aceita o formato { data: {...} } para POST
+        const body = JSON.stringify({ data: data });
+
+        const res = await fetch(SHEETDB_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: body,
+        });
+
+        if(!res.ok){
+          const text = await res.text().catch(()=>null);
+          throw new Error('SheetDB retornou status ' + res.status + ' — ' + text);
+        }
+
+        return res.json();
+      }
+
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        errorBox.style.display = 'none';
+
+        // Basic validation: name/company and q1..q14 required
+        const name = document.getElementById('name').value.trim();
+        const company = document.getElementById('company').value.trim();
+        if(!name || !company){
+          showError('Preencha seu nome e o nome da empresa.');
+          return;
+        }
+        // Ensure all radio groups have selection
+        for(let i=1;i<=14;i++){
+          const radios = form.querySelectorAll('input[name="q'+i+'"]');
+          if(radios.length){
+            const checked = form.querySelector('input[name="q'+i+'"]:checked');
+            if(!checked){
+              showError('Por favor responda a pergunta ' + i + '.');
+              return;
+            }
+          }
+        }
+
+        const payload = gatherFormData(form);
+
+        try{
+          // send to sheetdb
+          await submitToSheetDB(payload);
+          showSuccess();
+          form.reset();
+        }catch(err){
+          console.error('Erro ao enviar para SheetDB:', err);
+          showError('Falha ao enviar. ' + (err.message || '') + ' — Verifique a URL do SheetDB no script.');
+        }
+      });
+
+      resetBtn.addEventListener('click', function(){
+        if(confirm('Limpar todas as respostas do formulário?')) form.reset();
+      });
+
+      newResponseBtn.addEventListener('click', function(){
+        hideSuccess();
+        form.reset();
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      closeSuccessBtn.addEventListener('click', hideSuccess);
+
+    })();
+  </script>
+</body>
+</html>
