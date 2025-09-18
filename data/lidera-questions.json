@@ -1,0 +1,403 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "radio",
+      "title": "1) Vamos começar pelo básico: o que você mais quer alcançar com a versão digital do seu curso?",
+      "required": true,
+      "options": [
+        {
+          "value": "Escalonar nacionalmente o conhecimento",
+          "label": "A) Quero levar meu conhecimento para o Brasil inteiro!"
+        },
+        {
+          "value": "Gerar renda recorrente",
+          "label": "B) Criar uma fonte de renda que funcione todo mês"
+        },
+        {
+          "value": "Captar leads para consultorias",
+          "label": "C) Atrair mais clientes interessados nas minhas consultorias"
+        },
+        {
+          "value": "Aumentar autoridade de marca",
+          "label": "D) Me posicionar como referência no mercado"
+        },
+        {
+          "value": "Múltiplos objetivos (escala + renda + autoridade)",
+          "label": "E) Quero tudo isso! Escala, renda e reconhecimento"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "radio",
+      "title": "2) Pensando no seu bolso e na praticidade: qual modelo faz mais sentido para começar?",
+      "required": true,
+      "options": [
+        {
+          "value": "Curso pago único (Hotmart)",
+          "label": "A) Venda única no Hotmart (mais simples para começar)"
+        },
+        {
+          "value": "Assinatura mensal (YouTube Membros)",
+          "label": "B) Mensalidade no YouTube (renda recorrente)"
+        },
+        {
+          "value": "Híbrido: curso + comunidade",
+          "label": "C) Curso + comunidade exclusiva (mais valor agregado)"
+        },
+        {
+          "value": "Turmas fechadas com inscrições periódicas",
+          "label": "D) Turmas com data para começar (cria urgência)"
+        },
+        {
+          "value": "Acesso perpétuo desde o início",
+          "label": "E) Acesso vitalício desde o primeiro dia"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "checkbox",
+      "title": "3) Que tipo de conteúdo você se sente mais confortável criando? (pode marcar várias)",
+      "required": false,
+      "options": [
+        {
+          "value": "Vídeos curtos (5-15min)",
+          "label": "A) Vídeos rápidos e diretos (5-15min cada)"
+        },
+        {
+          "value": "Lives e sessões de Q&A",
+          "label": "B) Lives ao vivo para tirar dúvidas na hora"
+        },
+        {
+          "value": "Materiais práticos (planilhas, templates)",
+          "label": "C) Planilhas e templates que eles possam usar"
+        },
+        {
+          "value": "Estudos de caso reais",
+          "label": "D) Casos reais dos seus clientes (com resultados)"
+        },
+        {
+          "value": "Comunidade exclusiva (Telegram/WhatsApp)",
+          "label": "E) Grupo exclusivo para networking e dúvidas"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "radio",
+      "title": "4) Sendo honesto sobre tempo e orçamento: qual nível de produção é mais realista?",
+      "required": true,
+      "options": [
+        {
+          "value": "Produção ágil (qualidade básica mas eficaz)",
+          "label": "A) Simples e eficaz (foco no conteúdo, não na produção)"
+        },
+        {
+          "value": "Semi-profissional (boa edição e iluminação)",
+          "label": "B) Qualidade boa (boa edição e iluminação)"
+        },
+        {
+          "value": "Produção profissional em estúdio",
+          "label": "C) Produção de cinema (estúdio profissional)"
+        },
+        {
+          "value": "Misto (conteúdo simples + alguns vídeos profissionais)",
+          "label": "D) Misturado (alguns simples, outros mais caprichados)"
+        },
+        {
+          "value": "Evolutivo (começar simples e melhorar com o tempo)",
+          "label": "E) Começar simples e ir melhorando conforme cresce"
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "checkbox",
+      "title": "5) Onde você pretende \"pescar\" seus futuros alunos? (pode marcar várias)",
+      "required": false,
+      "options": [
+        {
+          "value": "Instagram (conteúdo orgânico + Reels)",
+          "label": "A) Instagram (posts e reels orgânicos)"
+        },
+        {
+          "value": "YouTube (conteúdo gratuito + comunidade)",
+          "label": "B) YouTube (conteúdo gratuito para atrair)"
+        },
+        {
+          "value": "Anúncios pagos (Meta/Google)",
+          "label": "C) Anúncios pagos (Facebook, Instagram, Google)"
+        },
+        {
+          "value": "Parcerias e afiliados",
+          "label": "D) Parcerias com outros profissionais"
+        },
+        {
+          "value": "E-mail marketing e webinars",
+          "label": "E) E-mail marketing e webinars gratuitos"
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "radio",
+      "title": "6) Como você quer dar suporte aos seus alunos? (pense no seu tempo disponível)",
+      "required": true,
+      "options": [
+        {
+          "value": "Apenas conteúdo gravado",
+          "label": "A) Só o conteúdo gravado mesmo (menos trabalho)"
+        },
+        {
+          "value": "Grupo de suporte no Telegram/WhatsApp",
+          "label": "B) Grupo no Telegram/WhatsApp para dúvidas"
+        },
+        {
+          "value": "Lives mensais de tirar dúvidas",
+          "label": "C) Uma live por mês para tirar dúvidas"
+        },
+        {
+          "value": "Mentorias em grupo (como upsell)",
+          "label": "D) Mentorias em grupo (como produto premium)"
+        },
+        {
+          "value": "Suporte híbrido (grupo + lives eventuais)",
+          "label": "E) Grupo + lives de vez em quando"
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "checkbox",
+      "title": "7) O que vai te fazer dormir tranquilo sabendo que deu certo? (pode marcar várias)",
+      "required": false,
+      "options": [
+        {
+          "value": "Número de matrículas",
+          "label": "A) Quantidade de pessoas matriculadas"
+        },
+        {
+          "value": "Taxa de conclusão do curso",
+          "label": "B) Ver que os alunos terminam o curso"
+        },
+        {
+          "value": "Retorno sobre investimento em anúncios",
+          "label": "C) Anúncios dando lucro (não só gastando)"
+        },
+        {
+          "value": "Depoimentos e casos de sucesso",
+          "label": "D) Depoimentos e resultados dos alunos"
+        },
+        {
+          "value": "Satisfação dos alunos (NPS)",
+          "label": "E) Alunos realmente satisfeitos e recomendando"
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "type": "radio",
+      "title": "8) Falando do material do curso presencial: como está a situação?",
+      "required": true,
+      "options": [
+        {
+          "value": "Completo e pronto para adaptação",
+          "label": "A) Está pronto! Só preciso adaptar para o digital"
+        },
+        {
+          "value": "Parcialmente pronto (slides e exercícios)",
+          "label": "B) Tenho slides e exercícios, mas falta organizar"
+        },
+        {
+          "value": "Apenas roteiro e estrutura",
+          "label": "C) Só tenho o roteiro e a estrutura na cabeça"
+        },
+        {
+          "value": "Precisa ser reformulado",
+          "label": "D) Preciso reformular tudo para o digital"
+        },
+        {
+          "value": "Inexistente (será criado do zero)",
+          "label": "E) Vou criar tudo do zero mesmo"
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "type": "checkbox",
+      "title": "9) Que tipo de ajuda você vai precisar? (seja realista sobre o que não sabe fazer)",
+      "required": false,
+      "options": [
+        {
+          "value": "Editor de vídeo",
+          "label": "A) Alguém para editar os vídeos"
+        },
+        {
+          "value": "Designer (artes e thumbnails)",
+          "label": "B) Designer para artes e thumbnails"
+        },
+        {
+          "value": "Especialista em tráfego pago",
+          "label": "C) Especialista em anúncios pagos"
+        },
+        {
+          "value": "Produtor/assistente de gravações",
+          "label": "D) Alguém para ajudar nas gravações"
+        },
+        {
+          "value": "Copywriter (textos de vendas)",
+          "label": "E) Copywriter para textos que vendem"
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "type": "radio",
+      "title": "10) Qual promessa vai fazer o pessoal abrir a carteira? (seja específico!)",
+      "required": true,
+      "options": [
+        {
+          "value": "Primeiros clientes em 30 dias",
+          "label": "A) \"Seus primeiros clientes em 30 dias\""
+        },
+        {
+          "value": "Dobrar o volume de leads em 60 dias",
+          "label": "B) \"Dobrar seus leads em 60 dias\""
+        },
+        {
+          "value": "Funil de vendas estruturado e funcionando",
+          "label": "C) \"Funil de vendas funcionando no automático\""
+        },
+        {
+          "value": "Autonomia na gestão do marketing digital",
+          "label": "D) \"Nunca mais depender de terceiros no marketing\""
+        },
+        {
+          "value": "Outra transformação específica",
+          "label": "E) Tenho outra promessa em mente"
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "type": "checkbox",
+      "title": "11) Que \"mimos\" extras vão fazer eles comprarem na hora? (pode marcar várias)",
+      "required": false,
+      "options": [
+        {
+          "value": "Templates de anúncios e criativos",
+          "label": "A) Templates prontos de anúncios e criativos"
+        },
+        {
+          "value": "Planilhas de controle e ROI",
+          "label": "B) Planilhas para controlar gastos e resultados"
+        },
+        {
+          "value": "Sessão de análise de funil (em grupo)",
+          "label": "C) Sessão ao vivo analisando funis dos alunos"
+        },
+        {
+          "value": "Aula extra sobre copywriting",
+          "label": "D) Aula bônus de copywriting que converte"
+        },
+        {
+          "value": "Gravações das turmas presenciais",
+          "label": "E) Gravações das suas turmas presenciais"
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "type": "radio",
+      "title": "12) E os afiliados? Como você vê essa história?",
+      "required": true,
+      "options": [
+        {
+          "value": "Lançar com afiliados pagos desde o início",
+          "label": "A) Quero afiliados grandes desde o começo"
+        },
+        {
+          "value": "Testar com microinfluencers primeiro",
+          "label": "B) Começar com influencers menores primeiro"
+        },
+        {
+          "value": "Não usar afiliados inicialmente",
+          "label": "C) Não quero afiliados no início"
+        },
+        {
+          "value": "Acionar afiliados após validação do produto",
+          "label": "D) Só depois que validar que o produto funciona"
+        },
+        {
+          "value": "Ainda em avaliação",
+          "label": "E) Ainda estou pensando nisso"
+        }
+      ]
+    },
+    {
+      "id": "q13",
+      "type": "checkbox",
+      "title": "13) O que te tira o sono pensando que pode dar errado? (pode marcar várias)",
+      "required": false,
+      "options": [
+        {
+          "value": "Baixa taxa de conversão",
+          "label": "A) Muita gente vendo, pouca gente comprando"
+        },
+        {
+          "value": "Falta de engajamento dos alunos",
+          "label": "B) Alunos comprando e não participando"
+        },
+        {
+          "value": "Problemas técnicos na entrega",
+          "label": "C) Problemas técnicos na plataforma"
+        },
+        {
+          "value": "Custo de aquisição muito alto",
+          "label": "D) Gastar mais em anúncios do que ganhar"
+        },
+        {
+          "value": "Falta de provas sociais no início",
+          "label": "E) Não ter depoimentos no começo"
+        }
+      ]
+    },
+    {
+      "id": "q14",
+      "type": "radio",
+      "title": "14) Sendo realista: quando você quer colocar isso no ar?",
+      "required": true,
+      "options": [
+        {
+          "value": "30 dias (MVP rápido)",
+          "label": "A) 30 dias (versão simples mas funcional)"
+        },
+        {
+          "value": "60 dias (lançamento planejado)",
+          "label": "B) 60 dias (lançamento bem planejado)"
+        },
+        {
+          "value": "90 dias (estrutura completa)",
+          "label": "C) 90 dias (estrutura completa e robusta)"
+        },
+        {
+          "value": "120 dias (produção robusta)",
+          "label": "D) 120 dias (produção de alta qualidade)"
+        },
+        {
+          "value": "Outro prazo personalizado",
+          "label": "E) Tenho outro prazo em mente"
+        }
+      ]
+    },
+    {
+      "id": "q15",
+      "type": "textarea",
+      "title": "15) Quer contar mais alguma coisa? Fique à vontade!",
+      "required": false,
+      "placeholder": "Conte mais detalhes sobre suas respostas, preocupações específicas, contexto do seu negócio, ou qualquer coisa que acha importante a gente saber..."
+    }
+  ]
+}

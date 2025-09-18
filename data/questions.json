@@ -1,0 +1,427 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "radio",
+      "title": "1) Qual é o seu maior desafio hoje com as redes sociais do seu negócio?",
+      "required": true,
+      "options": [
+        {
+          "value": "Não sei o que postar",
+          "label": "A) Não sei o que postar - fico sempre em branco"
+        },
+        {
+          "value": "Não tenho tempo para criar conteúdo",
+          "label": "B) Não tenho tempo para ficar criando conteúdo"
+        },
+        {
+          "value": "Posto mas não vendo nada",
+          "label": "C) Posto, mas não consigo converter em vendas"
+        },
+        {
+          "value": "Dependo de terceiros",
+          "label": "D) Dependo de agência/freelancer e quero independência"
+        },
+        {
+          "value": "Não sei medir resultados",
+          "label": "E) Não sei se está funcionando - não entendo os números"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "checkbox",
+      "title": "2) Em quais redes sociais você já tem presença? (pode marcar várias)",
+      "required": false,
+      "options": [
+        {
+          "value": "Instagram",
+          "label": "A) Instagram (perfil pessoal ou empresarial)"
+        },
+        {
+          "value": "Facebook",
+          "label": "B) Facebook (página da empresa)"
+        },
+        {
+          "value": "LinkedIn",
+          "label": "C) LinkedIn (perfil profissional)"
+        },
+        {
+          "value": "TikTok",
+          "label": "D) TikTok (ainda testando)"
+        },
+        {
+          "value": "YouTube",
+          "label": "E) YouTube (canal da empresa)"
+        },
+        {
+          "value": "WhatsApp Business",
+          "label": "F) WhatsApp Business"
+        },
+        {
+          "value": "Nenhuma ainda",
+          "label": "G) Ainda não tenho presença digital"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "radio",
+      "title": "3) Como você se sente quando precisa criar conteúdo para as redes sociais?",
+      "required": true,
+      "options": [
+        {
+          "value": "Travado e sem ideias",
+          "label": "A) Fico travado, não sei nem por onde começar"
+        },
+        {
+          "value": "Inseguro sobre qualidade",
+          "label": "B) Tenho ideias, mas fico inseguro se está bom"
+        },
+        {
+          "value": "Sem tempo para executar",
+          "label": "C) Sei o que fazer, mas não tenho tempo"
+        },
+        {
+          "value": "Confiante mas sem estratégia",
+          "label": "D) Me sinto confiante, mas falta estratégia"
+        },
+        {
+          "value": "Totalmente perdido",
+          "label": "E) Completamente perdido - preciso de ajuda total"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "radio",
+      "title": "4) Qual é o seu objetivo principal com as redes sociais?",
+      "required": true,
+      "options": [
+        {
+          "value": "Aumentar vendas diretas",
+          "label": "A) Vender mais - quero que as redes tragam clientes"
+        },
+        {
+          "value": "Gerar leads qualificados",
+          "label": "B) Captar leads interessados nos meus serviços"
+        },
+        {
+          "value": "Construir autoridade",
+          "label": "C) Me posicionar como referência no mercado"
+        },
+        {
+          "value": "Aumentar visibilidade da marca",
+          "label": "D) Fazer minha marca ser mais conhecida"
+        },
+        {
+          "value": "Todos os objetivos acima",
+          "label": "E) Quero tudo: vendas, leads, autoridade e visibilidade"
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "checkbox",
+      "title": "5) Que tipo de conteúdo você se sente mais confortável criando? (pode marcar várias)",
+      "required": false,
+      "options": [
+        {
+          "value": "Posts com texto",
+          "label": "A) Posts com texto (legendas e carrosséis)"
+        },
+        {
+          "value": "Fotos do dia a dia",
+          "label": "B) Fotos do dia a dia da empresa"
+        },
+        {
+          "value": "Vídeos curtos",
+          "label": "C) Vídeos curtos (Reels/Stories)"
+        },
+        {
+          "value": "Lives e transmissões",
+          "label": "D) Lives ao vivo falando sobre o negócio"
+        },
+        {
+          "value": "Conteúdo educativo",
+          "label": "E) Dicas e conteúdo educativo"
+        },
+        {
+          "value": "Nenhum - preciso aprender",
+          "label": "F) Nenhum - preciso aprender tudo do zero"
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "radio",
+      "title": "6) Quanto tempo por semana você consegue dedicar às redes sociais?",
+      "required": true,
+      "options": [
+        {
+          "value": "1-2 horas por semana",
+          "label": "A) 1-2 horas por semana (bem corrido)"
+        },
+        {
+          "value": "3-5 horas por semana",
+          "label": "B) 3-5 horas por semana (dá para organizar)"
+        },
+        {
+          "value": "6-10 horas por semana",
+          "label": "C) 6-10 horas por semana (consigo me dedicar)"
+        },
+        {
+          "value": "Mais de 10 horas por semana",
+          "label": "D) Mais de 10 horas por semana (prioridade total)"
+        },
+        {
+          "value": "Tempo variável",
+          "label": "E) Depende da semana - tempo bem variável"
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "checkbox",
+      "title": "7) Quais ferramentas você já usa ou gostaria de aprender? (pode marcar várias)",
+      "required": false,
+      "options": [
+        {
+          "value": "Canva para design",
+          "label": "A) Canva (para criar artes e posts)"
+        },
+        {
+          "value": "Apps de edição de vídeo",
+          "label": "B) Apps de edição de vídeo (CapCut, InShot)"
+        },
+        {
+          "value": "Ferramentas de agendamento",
+          "label": "C) Ferramentas para agendar posts"
+        },
+        {
+          "value": "Analytics e métricas",
+          "label": "D) Ferramentas para medir resultados"
+        },
+        {
+          "value": "IA para conteúdo",
+          "label": "E) Inteligência Artificial para criar conteúdo"
+        },
+        {
+          "value": "Nenhuma ainda",
+          "label": "F) Não uso nenhuma ferramenta ainda"
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "type": "radio",
+      "title": "8) Como você prefere aprender novas estratégias de marketing digital?",
+      "required": true,
+      "options": [
+        {
+          "value": "Vídeos práticos passo a passo",
+          "label": "A) Vídeos práticos mostrando como fazer"
+        },
+        {
+          "value": "Templates e exemplos prontos",
+          "label": "B) Templates prontos que posso adaptar"
+        },
+        {
+          "value": "Mentoria individual",
+          "label": "C) Mentoria individual focada no meu negócio"
+        },
+        {
+          "value": "Grupo de empresários",
+          "label": "D) Grupo com outros empresários trocando experiências"
+        },
+        {
+          "value": "Mistura de tudo",
+          "label": "E) Um pouco de cada - vídeos, templates e mentoria"
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "type": "checkbox",
+      "title": "9) Quais são suas maiores dificuldades técnicas? (pode marcar várias)",
+      "required": false,
+      "options": [
+        {
+          "value": "Criar artes bonitas",
+          "label": "A) Criar artes e designs que chamem atenção"
+        },
+        {
+          "value": "Escrever legendas que vendem",
+          "label": "B) Escrever textos que realmente vendem"
+        },
+        {
+          "value": "Gravar e editar vídeos",
+          "label": "C) Gravar e editar vídeos de qualidade"
+        },
+        {
+          "value": "Entender métricas",
+          "label": "D) Entender se está dando resultado"
+        },
+        {
+          "value": "Criar estratégia de conteúdo",
+          "label": "E) Planejar o que postar e quando"
+        },
+        {
+          "value": "Interagir com seguidores",
+          "label": "F) Responder comentários e DMs de forma estratégica"
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "type": "radio",
+      "title": "10) Qual resultado faria você pensar: 'Valeu a pena investir na mentoria'?",
+      "required": true,
+      "options": [
+        {
+          "value": "Dobrar seguidores em 90 dias",
+          "label": "A) Dobrar o número de seguidores em 90 dias"
+        },
+        {
+          "value": "Gerar 10+ leads por mês",
+          "label": "B) Conseguir 10+ leads qualificados por mês"
+        },
+        {
+          "value": "Aumentar vendas em 30%",
+          "label": "C) Aumentar as vendas em pelo menos 30%"
+        },
+        {
+          "value": "Independência total",
+          "label": "D) Nunca mais precisar de agência ou freelancer"
+        },
+        {
+          "value": "Reconhecimento como autoridade",
+          "label": "E) Ser reconhecido como referência no meu setor"
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "type": "checkbox",
+      "title": "11) Que tipo de suporte você gostaria de ter durante a mentoria? (pode marcar várias)",
+      "required": false,
+      "options": [
+        {
+          "value": "Grupo no WhatsApp",
+          "label": "A) Grupo no WhatsApp para tirar dúvidas rápidas"
+        },
+        {
+          "value": "Lives semanais",
+          "label": "B) Lives semanais para acompanhar o progresso"
+        },
+        {
+          "value": "Revisão de conteúdo",
+          "label": "C) Revisão dos meus posts antes de publicar"
+        },
+        {
+          "value": "Templates personalizados",
+          "label": "D) Templates personalizados para o meu negócio"
+        },
+        {
+          "value": "Análise de métricas",
+          "label": "E) Análise mensal dos resultados e ajustes"
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "type": "radio",
+      "title": "12) Qual é o seu orçamento mensal para investir em marketing digital?",
+      "required": true,
+      "options": [
+        {
+          "value": "Até R$ 500",
+          "label": "A) Até R$ 500 (começando devagar)"
+        },
+        {
+          "value": "R$ 500 a R$ 1.500",
+          "label": "B) Entre R$ 500 e R$ 1.500 (investimento moderado)"
+        },
+        {
+          "value": "R$ 1.500 a R$ 3.000",
+          "label": "C) Entre R$ 1.500 e R$ 3.000 (investimento sério)"
+        },
+        {
+          "value": "Mais de R$ 3.000",
+          "label": "D) Mais de R$ 3.000 (investimento alto)"
+        },
+        {
+          "value": "Ainda definindo",
+          "label": "E) Ainda estou definindo o orçamento"
+        }
+      ]
+    },
+    {
+      "id": "q13",
+      "type": "checkbox",
+      "title": "13) O que mais te preocupa em relação ao marketing digital? (pode marcar várias)",
+      "required": false,
+      "options": [
+        {
+          "value": "Gastar dinheiro sem retorno",
+          "label": "A) Gastar dinheiro e não ver resultado"
+        },
+        {
+          "value": "Não ter tempo para manter",
+          "label": "B) Começar bem mas não conseguir manter"
+        },
+        {
+          "value": "Concorrência muito forte",
+          "label": "C) Concorrência muito forte no meu setor"
+        },
+        {
+          "value": "Mudanças constantes",
+          "label": "D) Algoritmos e regras mudando sempre"
+        },
+        {
+          "value": "Exposição pessoal",
+          "label": "E) Ter que me expor muito nas redes sociais"
+        },
+        {
+          "value": "Críticas e comentários negativos",
+          "label": "F) Lidar com críticas e comentários negativos"
+        }
+      ]
+    },
+    {
+      "id": "q14",
+      "type": "radio",
+      "title": "14) Em quanto tempo você gostaria de ver os primeiros resultados?",
+      "required": true,
+      "options": [
+        {
+          "value": "30 dias",
+          "label": "A) 30 dias (resultados rápidos)"
+        },
+        {
+          "value": "60 dias",
+          "label": "B) 60 dias (prazo realista)"
+        },
+        {
+          "value": "90 dias",
+          "label": "C) 90 dias (construção sólida)"
+        },
+        {
+          "value": "6 meses",
+          "label": "D) 6 meses (investimento de longo prazo)"
+        },
+        {
+          "value": "Sem pressa",
+          "label": "E) Sem pressa - quero fazer direito"
+        }
+      ]
+    },
+    {
+      "id": "q15",
+      "type": "textarea",
+      "title": "15) Conte mais sobre seu negócio e seus desafios específicos:",
+      "required": false,
+      "placeholder": "Fale sobre seu setor, principais concorrentes, o que já tentou fazer nas redes sociais, maiores frustrações, ou qualquer contexto que possa ajudar a personalizar a mentoria para você..."
+    }
+  ]
+}

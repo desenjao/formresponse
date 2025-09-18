@@ -311,6 +311,14 @@
       box-shadow: 0 5px 15px rgba(255, 122, 0, 0.3);
     }
 
+    button.primary:disabled {
+      background: var(--muted);
+      color: rgba(255, 255, 255, 0.7);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
     button.primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(255, 122, 0, 0.4);
@@ -412,7 +420,40 @@
       backdrop-filter: blur(10px);
     }
 
-    /* Animations */
+    .loading {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+    }
+
+    .submit-loading {
+      display: none;
+      background: rgba(255, 122, 0, 0.1);
+      color: var(--primary);
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 122, 0, 0.2);
+      margin-bottom: 15px;
+      backdrop-filter: blur(10px);
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .loading-spinner {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -458,10 +499,10 @@
 <body>
   <div class="container" role="main">
     <header>
-      <div class="logo">MNPrá</div>
+      <div class="logo">BiaOli</div>
       <div>
-        <h1>Marketing na Prática — EitaDevis e Lidera</h1>
-        <p class="lead">Questionário estratégico — defina os pilares do curso digital e sua execução</p>
+        <h1> EitaDevis e Lidera</h1>
+        <p class="lead">Questionário estratégico — defina os pilares de como vamos proceder com o programa de mentoria</p>
       </div>
     </header>
 
@@ -472,9 +513,16 @@
       </p>
     </div>
 
-    <div class="error" id="errorBox">Ocorreu um erro ao enviar — veja o console para detalhes.</div>
+    <div class="loading" id="loadingBox">Carregando perguntas...</div>
+    <div class="error" id="errorBox">Ocorreu um erro ao carregar as perguntas.</div>
+    <div class="submit-loading" id="submitLoadingBox">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+        <div class="loading-spinner"></div>
+        Enviando suas respostas...
+      </div>
+    </div>
 
-    <form id="quizForm" class="card" autocomplete="off">
+    <form id="quizForm" class="card" autocomplete="off" style="display: none;">
       <div class="section-title"><h2>Dados do Respondente</h2></div>
 
       <div class="field-row">
@@ -490,186 +538,14 @@
 
       <div class="section-title"><h2>Perguntas Estratégicas (responda com atenção)</h2></div>
 
-      <!-- Question 1 - single choice -->
-      <div class="question" id="q1">
-        <h3>1) Vamos começar pelo básico: o que você mais quer alcançar com a versão digital do seu curso?</h3>
-        <div class="options">
-          <label class="option"><input type="radio" name="q1" value="Escalonar nacionalmente o conhecimento" required /> A) Quero levar meu conhecimento para o Brasil inteiro!</label>
-          <label class="option"><input type="radio" name="q1" value="Gerar renda recorrente" /> B) Criar uma fonte de renda que funcione todo mês</label>
-          <label class="option"><input type="radio" name="q1" value="Captar leads para consultorias" /> C) Atrair mais clientes interessados nas minhas consultorias</label>
-          <label class="option"><input type="radio" name="q1" value="Aumentar autoridade de marca" /> D) Me posicionar como referência no mercado</label>
-          <label class="option"><input type="radio" name="q1" value="Múltiplos objetivos (escala + renda + autoridade)" /> E) Quero tudo isso! Escala, renda e reconhecimento</label>
-        </div>
-      </div>
-
-      <!-- Question 2 - single choice -->
-      <div class="question" id="q2">
-        <h3>2) Pensando no seu bolso e na praticidade: qual modelo faz mais sentido para começar?</h3>
-        <div class="options">
-          <label class="option"><input type="radio" name="q2" value="Curso pago único (Hotmart)" required /> A) Venda única no Hotmart (mais simples para começar)</label>
-          <label class="option"><input type="radio" name="q2" value="Assinatura mensal (YouTube Membros)" /> B) Mensalidade no YouTube (renda recorrente)</label>
-          <label class="option"><input type="radio" name="q2" value="Híbrido: curso + comunidade" /> C) Curso + comunidade exclusiva (mais valor agregado)</label>
-          <label class="option"><input type="radio" name="q2" value="Turmas fechadas com inscrições periódicas" /> D) Turmas com data para começar (cria urgência)</label>
-          <label class="option"><input type="radio" name="q2" value="Acesso perpétuo desde o início" /> E) Acesso vitalício desde o primeiro dia</label>
-        </div>
-      </div>
-
-      <!-- Question 3 - multiple choice -->
-      <div class="question" id="q3">
-        <h3>3) Que tipo de conteúdo você se sente mais confortável criando? (pode marcar várias)</h3>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="q3[]" value="Vídeos curtos (5-15min)" /> A) Vídeos rápidos e diretos (5-15min cada)</label>
-          <label class="option"><input type="checkbox" name="q3[]" value="Lives e sessões de Q&A" /> B) Lives ao vivo para tirar dúvidas na hora</label>
-          <label class="option"><input type="checkbox" name="q3[]" value="Materiais práticos (planilhas, templates)" /> C) Planilhas e templates que eles possam usar</label>
-          <label class="option"><input type="checkbox" name="q3[]" value="Estudos de caso reais" /> D) Casos reais dos seus clientes (com resultados)</label>
-          <label class="option"><input type="checkbox" name="q3[]" value="Comunidade exclusiva (Telegram/WhatsApp)" /> E) Grupo exclusivo para networking e dúvidas</label>
-        </div>
-      </div>
-
-      <!-- Question 4 - single -->
-      <div class="question" id="q4">
-        <h3>4) Sendo honesto sobre tempo e orçamento: qual nível de produção é mais realista?</h3>
-        <div class="options">
-          <label class="option"><input type="radio" name="q4" value="Produção ágil (qualidade básica mas eficaz)" required /> A) Simples e eficaz (foco no conteúdo, não na produção)</label>
-          <label class="option"><input type="radio" name="q4" value="Semi-profissional (boa edição e iluminação)" /> B) Qualidade boa (boa edição e iluminação)</label>
-          <label class="option"><input type="radio" name="q4" value="Produção profissional em estúdio" /> C) Produção de cinema (estúdio profissional)</label>
-          <label class="option"><input type="radio" name="q4" value="Misto (conteúdo simples + alguns vídeos profissionais)" /> D) Misturado (alguns simples, outros mais caprichados)</label>
-          <label class="option"><input type="radio" name="q4" value="Evolutivo (começar simples e melhorar com o tempo)" /> E) Começar simples e ir melhorando conforme cresce</label>
-        </div>
-      </div>
-
-      <!-- Question 5 - multiple -->
-      <div class="question" id="q5">
-        <h3>5) Onde você pretende "pescar" seus futuros alunos? (pode marcar várias)</h3>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="q5[]" value="Instagram (conteúdo orgânico + Reels)" /> A) Instagram (posts e reels orgânicos)</label>
-          <label class="option"><input type="checkbox" name="q5[]" value="YouTube (conteúdo gratuito + comunidade)" /> B) YouTube (conteúdo gratuito para atrair)</label>
-          <label class="option"><input type="checkbox" name="q5[]" value="Anúncios pagos (Meta/Google)" /> C) Anúncios pagos (Facebook, Instagram, Google)</label>
-          <label class="option"><input type="checkbox" name="q5[]" value="Parcerias e afiliados" /> D) Parcerias com outros profissionais</label>
-          <label class="option"><input type="checkbox" name="q5[]" value="E-mail marketing e webinars" /> E) E-mail marketing e webinars gratuitos</label>
-        </div>
-      </div>
-
-      <!-- Question 6 - single -->
-      <div class="question" id="q6">
-        <h3>6) Como você quer dar suporte aos seus alunos? (pense no seu tempo disponível)</h3>
-        <div class="options">
-          <label class="option"><input type="radio" name="q6" value="Apenas conteúdo gravado" required /> A) Só o conteúdo gravado mesmo (menos trabalho)</label>
-          <label class="option"><input type="radio" name="q6" value="Grupo de suporte no Telegram/WhatsApp" /> B) Grupo no Telegram/WhatsApp para dúvidas</label>
-          <label class="option"><input type="radio" name="q6" value="Lives mensais de tirar dúvidas" /> C) Uma live por mês para tirar dúvidas</label>
-          <label class="option"><input type="radio" name="q6" value="Mentorias em grupo (como upsell)" /> D) Mentorias em grupo (como produto premium)</label>
-          <label class="option"><input type="radio" name="q6" value="Suporte híbrido (grupo + lives eventuais)" /> E) Grupo + lives de vez em quando</label>
-        </div>
-      </div>
-
-      <!-- Question 7 - multiple -->
-      <div class="question" id="q7">
-        <h3>7) O que vai te fazer dormir tranquilo sabendo que deu certo? (pode marcar várias)</h3>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="q7[]" value="Número de matrículas" /> A) Quantidade de pessoas matriculadas</label>
-          <label class="option"><input type="checkbox" name="q7[]" value="Taxa de conclusão do curso" /> B) Ver que os alunos terminam o curso</label>
-          <label class="option"><input type="checkbox" name="q7[]" value="Retorno sobre investimento em anúncios" /> C) Anúncios dando lucro (não só gastando)</label>
-          <label class="option"><input type="checkbox" name="q7[]" value="Depoimentos e casos de sucesso" /> D) Depoimentos e resultados dos alunos</label>
-          <label class="option"><input type="checkbox" name="q7[]" value="Satisfação dos alunos (NPS)" /> E) Alunos realmente satisfeitos e recomendando</label>
-        </div>
-      </div>
-
-      <!-- Question 8 - single -->
-      <div class="question" id="q8">
-        <h3>8) Falando do material do curso presencial: como está a situação?</h3>
-        <div class="options">
-          <label class="option"><input type="radio" name="q8" value="Completo e pronto para adaptação" required /> A) Está pronto! Só preciso adaptar para o digital</label>
-          <label class="option"><input type="radio" name="q8" value="Parcialmente pronto (slides e exercícios)" /> B) Tenho slides e exercícios, mas falta organizar</label>
-          <label class="option"><input type="radio" name="q8" value="Apenas roteiro e estrutura" /> C) Só tenho o roteiro e a estrutura na cabeça</label>
-          <label class="option"><input type="radio" name="q8" value="Precisa ser reformulado" /> D) Preciso reformular tudo para o digital</label>
-          <label class="option"><input type="radio" name="q8" value="Inexistente (será criado do zero)" /> E) Vou criar tudo do zero mesmo</label>
-        </div>
-      </div>
-
-      <!-- Question 9 - multiple -->
-      <div class="question" id="q9">
-        <h3>9) Que tipo de ajuda você vai precisar? (seja realista sobre o que não sabe fazer)</h3>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="q9[]" value="Editor de vídeo" /> A) Alguém para editar os vídeos</label>
-          <label class="option"><input type="checkbox" name="q9[]" value="Designer (artes e thumbnails)" /> B) Designer para artes e thumbnails</label>
-          <label class="option"><input type="checkbox" name="q9[]" value="Especialista em tráfego pago" /> C) Especialista em anúncios pagos</label>
-          <label class="option"><input type="checkbox" name="q9[]" value="Produtor/assistente de gravações" /> D) Alguém para ajudar nas gravações</label>
-          <label class="option"><input type="checkbox" name="q9[]" value="Copywriter (textos de vendas)" /> E) Copywriter para textos que vendem</label>
-        </div>
-      </div>
-
-      <!-- Question 10 - single -->
-      <div class="question" id="q10">
-        <h3>10) Qual promessa vai fazer o pessoal abrir a carteira? (seja específico!)</h3>
-        <div class="options">
-          <label class="option"><input type="radio" name="q10" value="Primeiros clientes em 30 dias" required /> A) "Seus primeiros clientes em 30 dias"</label>
-          <label class="option"><input type="radio" name="q10" value="Dobrar o volume de leads em 60 dias" /> B) "Dobrar seus leads em 60 dias"</label>
-          <label class="option"><input type="radio" name="q10" value="Funil de vendas estruturado e funcionando" /> C) "Funil de vendas funcionando no automático"</label>
-          <label class="option"><input type="radio" name="q10" value="Autonomia na gestão do marketing digital" /> D) "Nunca mais depender de terceiros no marketing"</label>
-          <label class="option"><input type="radio" name="q10" value="Outra transformação específica" /> E) Tenho outra promessa em mente</label>
-        </div>
-      </div>
-
-      <!-- Question 11 - multiple -->
-      <div class="question" id="q11">
-        <h3>11) Que "mimos" extras vão fazer eles comprarem na hora? (pode marcar várias)</h3>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="q11[]" value="Templates de anúncios e criativos" /> A) Templates prontos de anúncios e criativos</label>
-          <label class="option"><input type="checkbox" name="q11[]" value="Planilhas de controle e ROI" /> B) Planilhas para controlar gastos e resultados</label>
-          <label class="option"><input type="checkbox" name="q11[]" value="Sessão de análise de funil (em grupo)" /> C) Sessão ao vivo analisando funis dos alunos</label>
-          <label class="option"><input type="checkbox" name="q11[]" value="Aula extra sobre copywriting" /> D) Aula bônus de copywriting que converte</label>
-          <label class="option"><input type="checkbox" name="q11[]" value="Gravações das turmas presenciais" /> E) Gravações das suas turmas presenciais</label>
-        </div>
-      </div>
-
-      <!-- Question 12 - single -->
-      <div class="question" id="q12">
-        <h3>12) E os afiliados? Como você vê essa história?</h3>
-        <div class="options">
-          <label class="option"><input type="radio" name="q12" value="Lançar com afiliados pagos desde o início" required /> A) Quero afiliados grandes desde o começo</label>
-          <label class="option"><input type="radio" name="q12" value="Testar com microinfluencers primeiro" /> B) Começar com influencers menores primeiro</label>
-          <label class="option"><input type="radio" name="q12" value="Não usar afiliados inicialmente" /> C) Não quero afiliados no início</label>
-          <label class="option"><input type="radio" name="q12" value="Acionar afiliados após validação do produto" /> D) Só depois que validar que o produto funciona</label>
-          <label class="option"><input type="radio" name="q12" value="Ainda em avaliação" /> E) Ainda estou pensando nisso</label>
-        </div>
-      </div>
-
-      <!-- Question 13 - multiple -->
-      <div class="question" id="q13">
-        <h3>13) O que te tira o sono pensando que pode dar errado? (pode marcar várias)</h3>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="q13[]" value="Baixa taxa de conversão" /> A) Muita gente vendo, pouca gente comprando</label>
-          <label class="option"><input type="checkbox" name="q13[]" value="Falta de engajamento dos alunos" /> B) Alunos comprando e não participando</label>
-          <label class="option"><input type="checkbox" name="q13[]" value="Problemas técnicos na entrega" /> C) Problemas técnicos na plataforma</label>
-          <label class="option"><input type="checkbox" name="q13[]" value="Custo de aquisição muito alto" /> D) Gastar mais em anúncios do que ganhar</label>
-          <label class="option"><input type="checkbox" name="q13[]" value="Falta de provas sociais no início" /> E) Não ter depoimentos no começo</label>
-        </div>
-      </div>
-
-      <!-- Question 14 - single -->
-      <div class="question" id="q14">
-        <h3>14) Sendo realista: quando você quer colocar isso no ar?</h3>
-        <div class="options">
-          <label class="option"><input type="radio" name="q14" value="30 dias (MVP rápido)" required /> A) 30 dias (versão simples mas funcional)</label>
-          <label class="option"><input type="radio" name="q14" value="60 dias (lançamento planejado)" /> B) 60 dias (lançamento bem planejado)</label>
-          <label class="option"><input type="radio" name="q14" value="90 dias (estrutura completa)" /> C) 90 dias (estrutura completa e robusta)</label>
-          <label class="option"><input type="radio" name="q14" value="120 dias (produção robusta)" /> D) 120 dias (produção de alta qualidade)</label>
-          <label class="option"><input type="radio" name="q14" value="Outro prazo personalizado" /> E) Tenho outro prazo em mente</label>
-        </div>
-      </div>
-
-      <!-- Question 15 - open field -->
-      <div class="question" id="q15">
-        <h3>15) Quer contar mais alguma coisa? Fique à vontade!</h3>
-        <textarea id="q15" name="q15" rows="4" placeholder="Conte mais detalhes sobre suas respostas, preocupações específicas, contexto do seu negócio, ou qualquer coisa que acha importante a gente saber..."></textarea>
-      </div>
+      <div id="questionsContainer"></div>
 
       <div class="actions">
-        <button class="primary" type="submit">
+        <button class="primary" type="submit" id="submitBtn">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
           </svg>
-          Enviar respostas
+          <span id="submitBtnText">Enviar respostas</span>
         </button>
         <button class="ghost" type="button" id="resetBtn">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -681,8 +557,8 @@
       </div>
 
       <div class="footer">
-        <div class="note">As respostas serão gravadas em Google Sheets via SheetDB — substitua a URL no script.</div>
-        <div class="small">Design futurista • Cores: laranja, roxo e azul</div>
+        <div class="note">Eidevis, trazendo seu negócio para o digital</div>
+        <div class="small">desenjao</div>
       </div>
     </form>
   </div>
@@ -704,12 +580,11 @@
           </svg>
           Nova Resposta
         </button>
-        <button class="ghost" id="closeSuccessBtn">
+        <button class="ghost" id="goToEndBtn">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
+            <path d="M9 18l6-6-6-6"></path>
           </svg>
-          Fechar
+          fechar
         </button>
       </div>
     </div>
@@ -717,21 +592,119 @@
 
   <script>
     (function(){
-      // ---------- ATENÇÃO ----------
-      // Substitua a variável abaixo pela sua URL do SheetDB (ex.: https://sheetdb.io/api/v1/SEU_ID)
-      // Veja a documentação do SheetDB: https://sheetdb.io/docs
-      const SHEETDB_URL = "https://sheetdb.io/api/v1/cwwkws8sdaoql"; // <-- TROQUE AQUI
+      const SHEETDB_URL = "https://sheetdb.io/api/v1/cwwkws8sdaoql";
 
       const form = document.getElementById('quizForm');
       const successOverlay = document.getElementById('successOverlay');
       const errorBox = document.getElementById('errorBox');
+      const loadingBox = document.getElementById('loadingBox');
+      const submitLoadingBox = document.getElementById('submitLoadingBox');
+      const submitBtn = document.getElementById('submitBtn');
+      const submitBtnText = document.getElementById('submitBtnText');
+      const questionsContainer = document.getElementById('questionsContainer');
       const resetBtn = document.getElementById('resetBtn');
       const newResponseBtn = document.getElementById('newResponseBtn');
-      const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+      const goToEndBtn = document.getElementById('goToEndBtn');
+
+      let questionsData = null;
+      let isSubmitting = false;
+
+      async function loadQuestions() {
+        try {
+          loadingBox.style.display = 'block';
+          const response = await fetch('./data/questions.json');
+          if (!response.ok) {
+            throw new Error('Falha ao carregar o arquivo de perguntas');
+          }
+          questionsData = await response.json();
+          renderQuestions();
+          form.style.display = 'block';
+          loadingBox.style.display = 'none';
+        } catch (error) {
+          console.error('Erro ao carregar perguntas:', error);
+          showError('Erro ao carregar as perguntas: ' + error.message);
+          loadingBox.style.display = 'none';
+        }
+      }
+
+      function renderQuestions() {
+        if (!questionsData || !questionsData.questions) return;
+
+        questionsContainer.innerHTML = '';
+
+        questionsData.questions.forEach(question => {
+          const questionDiv = document.createElement('div');
+          questionDiv.className = 'question';
+          questionDiv.id = question.id;
+
+          const title = document.createElement('h3');
+          title.textContent = question.title;
+          questionDiv.appendChild(title);
+
+          if (question.type === 'textarea') {
+            const textarea = document.createElement('textarea');
+            textarea.id = question.id;
+            textarea.name = question.id;
+            textarea.rows = 4;
+            textarea.placeholder = question.placeholder || '';
+            if (question.required) textarea.required = true;
+            questionDiv.appendChild(textarea);
+          } else {
+            const optionsDiv = document.createElement('div');
+            optionsDiv.className = 'options';
+
+            question.options.forEach(option => {
+              const label = document.createElement('label');
+              label.className = 'option';
+
+              const input = document.createElement('input');
+              input.type = question.type;
+              input.name = question.type === 'checkbox' ? question.id + '[]' : question.id;
+              input.value = option.value;
+              if (question.required && question.type === 'radio') {
+                input.required = true;
+              }
+
+              const span = document.createElement('span');
+              span.textContent = option.label;
+
+              label.appendChild(input);
+              label.appendChild(span);
+              optionsDiv.appendChild(label);
+            });
+
+            questionDiv.appendChild(optionsDiv);
+          }
+
+          questionsContainer.appendChild(questionDiv);
+        });
+      }
+
+      function setSubmitLoading(loading) {
+        isSubmitting = loading;
+        submitBtn.disabled = loading;
+        resetBtn.disabled = loading;
+        
+        if (loading) {
+          submitLoadingBox.style.display = 'block';
+          submitBtnText.textContent = 'Enviando...';
+          submitBtn.querySelector('svg').style.display = 'none';
+          const spinner = document.createElement('div');
+          spinner.className = 'loading-spinner';
+          submitBtn.insertBefore(spinner, submitBtnText);
+        } else {
+          submitLoadingBox.style.display = 'none';
+          submitBtnText.textContent = 'Enviar respostas';
+          submitBtn.querySelector('svg').style.display = 'block';
+          const spinner = submitBtn.querySelector('.loading-spinner');
+          if (spinner) spinner.remove();
+        }
+      }
 
       function showSuccess(){
         successOverlay.style.display = 'flex';
         errorBox.style.display = 'none';
+        setSubmitLoading(false);
       }
       
       function hideSuccess(){
@@ -741,39 +714,32 @@
       function showError(msg){
         errorBox.style.display = 'block';
         errorBox.textContent = msg || 'Ocorreu um erro ao enviar — veja o console para detalhes.';
+        setSubmitLoading(false);
       }
 
       function gatherFormData(formEl){
         const fd = new FormData(formEl);
-        // Basic fields
         const payload = {
           nome: (fd.get('name') || '').trim(),
           empresa: (fd.get('company') || '').trim(),
           timestamp: new Date().toISOString()
         };
 
-        // Questions single-choice (radio)
-        for(let i=1;i<=14;i++){
-          const key = 'q' + i;
-          const val = fd.get(key) || '';
-          payload[key] = val;
-        }
-        // q15 - observações
-        payload.q15 = (fd.get('q15') || '').trim();
-
-        // For the checkbox groups: q3, q5, q7, q9, q11, q13
-        // We'll collect all checked values as comma-separated strings
-        const checkboxGroups = ['q3[]','q5[]','q7[]','q9[]','q11[]','q13[]'];
-        const mapNames = { 'q3[]':'q3', 'q5[]':'q5', 'q7[]':'q7', 'q9[]':'q9', 'q11[]':'q11', 'q13[]':'q13' };
-        checkboxGroups.forEach(name=>{
-          const values = [];
-          for(const pair of fd.entries()){
-            if(pair[0] === name){
-              values.push(pair[1]);
+        if (questionsData && questionsData.questions) {
+          questionsData.questions.forEach(question => {
+            if (question.type === 'checkbox') {
+              const values = [];
+              for(const pair of fd.entries()){
+                if(pair[0] === question.id + '[]'){
+                  values.push(pair[1]);
+                }
+              }
+              payload[question.id] = values.join('; ') || '';
+            } else {
+              payload[question.id] = (fd.get(question.id) || '').trim();
             }
-          }
-          payload[mapNames[name]] = values.join('; ') || '';
-        });
+          });
+        }
 
         return payload;
       }
@@ -783,7 +749,6 @@
           throw new Error('Você precisa configurar a constante SHEETDB_URL no script com sua URL do SheetDB.');
         }
 
-        // SheetDB aceita o formato { data: {...} } para POST
         const body = JSON.stringify({ data: data });
 
         const res = await fetch(SHEETDB_URL, {
@@ -804,31 +769,38 @@
 
       form.addEventListener('submit', async function(e){
         e.preventDefault();
+        
+        if (isSubmitting) {
+          console.log('Formulário já está sendo enviado, ignorando clique adicional');
+          return;
+        }
+
         errorBox.style.display = 'none';
 
-        // Basic validation: name/company and q1..q14 required
         const name = document.getElementById('name').value.trim();
         const company = document.getElementById('company').value.trim();
         if(!name || !company){
           showError('Preencha seu nome e o nome da empresa.');
           return;
         }
-        // Ensure all radio groups have selection
-        for(let i=1;i<=14;i++){
-          const radios = form.querySelectorAll('input[name="q'+i+'"]');
-          if(radios.length){
-            const checked = form.querySelector('input[name="q'+i+'"]:checked');
-            if(!checked){
-              showError('Por favor responda a pergunta ' + i + '.');
-              return;
+
+        if (questionsData && questionsData.questions) {
+          for (const question of questionsData.questions) {
+            if (question.required && question.type === 'radio') {
+              const checked = form.querySelector(`input[name="${question.id}"]:checked`);
+              if (!checked) {
+                showError(`Por favor responda: ${question.title}`);
+                return;
+              }
             }
           }
         }
 
+        setSubmitLoading(true);
+
         const payload = gatherFormData(form);
 
         try{
-          // send to sheetdb
           await submitToSheetDB(payload);
           showSuccess();
           form.reset();
@@ -839,17 +811,21 @@
       });
 
       resetBtn.addEventListener('click', function(){
+        if (isSubmitting) return;
         if(confirm('Limpar todas as respostas do formulário?')) form.reset();
       });
 
       newResponseBtn.addEventListener('click', function(){
         hideSuccess();
         form.reset();
-        // Scroll to top
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
-      closeSuccessBtn.addEventListener('click', hideSuccess);
+      goToEndBtn.addEventListener('click', function(){
+        window.location.href = './fim.html';
+      });
+
+      loadQuestions();
 
     })();
   </script>
