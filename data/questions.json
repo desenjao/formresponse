@@ -3,425 +3,401 @@
     {
       "id": "q1",
       "type": "radio",
-      "title": "1) Qual é o seu maior desafio hoje com as redes sociais do seu negócio?",
+      "title": "1) Como você prefere trabalhar com empresários e empreendedores?",
       "required": true,
       "options": [
         {
-          "value": "Não sei o que postar",
-          "label": "A) Não sei o que postar - fico sempre em branco"
+          "value": "Ensinar em grupo",
+          "label": "A) Ensinar em grupo - gosto de aulas e turmas"
         },
         {
-          "value": "Não tenho tempo para criar conteúdo",
-          "label": "B) Não tenho tempo para ficar criando conteúdo"
+          "value": "Acompanhar individualmente",
+          "label": "B) Acompanhar individualmente - mais próximo e personalizado"
         },
         {
-          "value": "Posto mas não vendo nada",
-          "label": "C) Posto, mas não consigo converter em vendas"
+          "value": "Executar diretamente",
+          "label": "C) Executar diretamente - fazer por eles"
         },
         {
-          "value": "Dependo de terceiros",
-          "label": "D) Dependo de agência/freelancer e quero independência"
+          "value": "Facilitar networking",
+          "label": "D) Facilitar networking - conectar pessoas"
         },
         {
-          "value": "Não sei medir resultados",
-          "label": "E) Não sei se está funcionando - não entendo os números"
+          "value": "Ainda não sei",
+          "label": "E) Ainda não tenho certeza do meu estilo"
         }
       ]
     },
     {
       "id": "q2",
-      "type": "checkbox",
-      "title": "2) Em quais redes sociais você já tem presença? (pode marcar várias)",
-      "required": false,
+      "type": "radio",
+      "title": "2) Você se vê mais como alguém que:",
+      "required": true,
       "options": [
         {
-          "value": "Instagram",
-          "label": "A) Instagram (perfil pessoal ou empresarial)"
+          "value": "Mostra o caminho",
+          "label": "A) Mostra o caminho e orienta (mentora)"
         },
         {
-          "value": "Facebook",
-          "label": "B) Facebook (página da empresa)"
+          "value": "Cria planos práticos",
+          "label": "B) Cria planos práticos e soluções (consultora)"
         },
         {
-          "value": "LinkedIn",
-          "label": "C) LinkedIn (perfil profissional)"
+          "value": "Executa diretamente",
+          "label": "C) Executa diretamente as tarefas (gestora)"
         },
         {
-          "value": "TikTok",
-          "label": "D) TikTok (ainda testando)"
+          "value": "Ensina conteúdo estruturado",
+          "label": "D) Ensina conteúdo estruturado (professora)"
         },
         {
-          "value": "YouTube",
-          "label": "E) YouTube (canal da empresa)"
-        },
-        {
-          "value": "WhatsApp Business",
-          "label": "F) WhatsApp Business"
-        },
-        {
-          "value": "Nenhuma ainda",
-          "label": "G) Ainda não tenho presença digital"
+          "value": "Facilita conexões",
+          "label": "E) Facilita conexões e networking (facilitadora)"
         }
       ]
     },
     {
       "id": "q3",
       "type": "radio",
-      "title": "3) Como você se sente quando precisa criar conteúdo para as redes sociais?",
+      "title": "3) O que mais te dá energia no trabalho?",
       "required": true,
       "options": [
         {
-          "value": "Travado e sem ideias",
-          "label": "A) Fico travado, não sei nem por onde começar"
+          "value": "Interação ao vivo",
+          "label": "A) Estar ao vivo interagindo com pessoas"
         },
         {
-          "value": "Inseguro sobre qualidade",
-          "label": "B) Tenho ideias, mas fico inseguro se está bom"
+          "value": "Gravar conteúdos organizados",
+          "label": "B) Gravar conteúdos bem organizados e estruturados"
         },
         {
-          "value": "Sem tempo para executar",
-          "label": "C) Sei o que fazer, mas não tenho tempo"
+          "value": "Escrever planos estratégicos",
+          "label": "C) Escrever planos estratégicos detalhados"
         },
         {
-          "value": "Confiante mas sem estratégia",
-          "label": "D) Me sinto confiante, mas falta estratégia"
+          "value": "Executar tarefas práticas",
+          "label": "D) Executar tarefas práticas e ver resultados"
         },
         {
-          "value": "Totalmente perdido",
-          "label": "E) Completamente perdido - preciso de ajuda total"
+          "value": "Provocar reflexões em grupo",
+          "label": "E) Provocar reflexões e discussões em grupo"
         }
       ]
     },
     {
       "id": "q4",
       "type": "radio",
-      "title": "4) Qual é o seu objetivo principal com as redes sociais?",
+      "title": "4) Você prefere ter:",
       "required": true,
       "options": [
         {
-          "value": "Aumentar vendas diretas",
-          "label": "A) Vender mais - quero que as redes tragam clientes"
+          "value": "Escala - muitas pessoas",
+          "label": "A) Escala - atingir muitas pessoas ao mesmo tempo"
         },
         {
-          "value": "Gerar leads qualificados",
-          "label": "B) Captar leads interessados nos meus serviços"
+          "value": "Profundidade - poucos clientes",
+          "label": "B) Profundidade - ajudar poucos empresários de perto"
         },
         {
-          "value": "Construir autoridade",
-          "label": "C) Me posicionar como referência no mercado"
+          "value": "Execução - resultados diretos",
+          "label": "C) Execução - entregar resultados diretos"
         },
         {
-          "value": "Aumentar visibilidade da marca",
-          "label": "D) Fazer minha marca ser mais conhecida"
+          "value": "Educação - transferir conhecimento",
+          "label": "D) Educação - transferir conhecimento estruturado"
         },
         {
-          "value": "Todos os objetivos acima",
-          "label": "E) Quero tudo: vendas, leads, autoridade e visibilidade"
+          "value": "Comunidade - criar conexões",
+          "label": "E) Comunidade - criar um espaço de conexões"
         }
       ]
     },
     {
       "id": "q5",
-      "type": "checkbox",
-      "title": "5) Que tipo de conteúdo você se sente mais confortável criando? (pode marcar várias)",
-      "required": false,
+      "type": "radio",
+      "title": "5) Como você gostaria de ser vista pelos seus clientes?",
+      "required": true,
       "options": [
         {
-          "value": "Posts com texto",
-          "label": "A) Posts com texto (legendas e carrosséis)"
+          "value": "A parceira que guia",
+          "label": "A) Como a parceira que guia e cobra resultados"
         },
         {
-          "value": "Fotos do dia a dia",
-          "label": "B) Fotos do dia a dia da empresa"
+          "value": "A especialista que resolve",
+          "label": "B) Como a especialista que resolve problemas"
         },
         {
-          "value": "Vídeos curtos",
-          "label": "C) Vídeos curtos (Reels/Stories)"
+          "value": "A profissional que executa",
+          "label": "C) Como a profissional que executa com excelência"
         },
         {
-          "value": "Lives e transmissões",
-          "label": "D) Lives ao vivo falando sobre o negócio"
+          "value": "A professora que ensina",
+          "label": "D) Como a professora que ensina e capacita"
         },
         {
-          "value": "Conteúdo educativo",
-          "label": "E) Dicas e conteúdo educativo"
-        },
-        {
-          "value": "Nenhum - preciso aprender",
-          "label": "F) Nenhum - preciso aprender tudo do zero"
+          "value": "A líder que conecta",
+          "label": "E) Como a líder que conecta e inspira"
         }
       ]
     },
     {
       "id": "q6",
       "type": "radio",
-      "title": "6) Quanto tempo por semana você consegue dedicar às redes sociais?",
+      "title": "6) Quanto tempo por semana você está disposta a se dedicar a essa nova função?",
       "required": true,
       "options": [
         {
-          "value": "1-2 horas por semana",
-          "label": "A) 1-2 horas por semana (bem corrido)"
+          "value": "5-10 horas",
+          "label": "A) 5-10 horas (atividade complementar)"
         },
         {
-          "value": "3-5 horas por semana",
-          "label": "B) 3-5 horas por semana (dá para organizar)"
+          "value": "15-20 horas",
+          "label": "B) 15-20 horas (meio período)"
         },
         {
-          "value": "6-10 horas por semana",
-          "label": "C) 6-10 horas por semana (consigo me dedicar)"
+          "value": "25-30 horas",
+          "label": "C) 25-30 horas (quase integral)"
         },
         {
-          "value": "Mais de 10 horas por semana",
-          "label": "D) Mais de 10 horas por semana (prioridade total)"
+          "value": "40+ horas",
+          "label": "D) 40+ horas (dedicação total)"
         },
         {
-          "value": "Tempo variável",
-          "label": "E) Depende da semana - tempo bem variável"
+          "value": "Flexível conforme demanda",
+          "label": "E) Flexível - conforme a demanda dos projetos"
         }
       ]
     },
     {
       "id": "q7",
-      "type": "checkbox",
-      "title": "7) Quais ferramentas você já usa ou gostaria de aprender? (pode marcar várias)",
-      "required": false,
+      "type": "radio",
+      "title": "7) Que tipo de produto/serviço faz mais sentido para o seu momento de vida?",
+      "required": true,
       "options": [
         {
-          "value": "Canva para design",
-          "label": "A) Canva (para criar artes e posts)"
+          "value": "Mentoria contínua",
+          "label": "A) Mentoria contínua (relacionamento de longo prazo)"
         },
         {
-          "value": "Apps de edição de vídeo",
-          "label": "B) Apps de edição de vídeo (CapCut, InShot)"
+          "value": "Consultoria pontual",
+          "label": "B) Consultoria pontual (projetos específicos)"
         },
         {
-          "value": "Ferramentas de agendamento",
-          "label": "C) Ferramentas para agendar posts"
+          "value": "Gestão de redes sociais",
+          "label": "C) Gestão de redes sociais (serviço recorrente)"
         },
         {
-          "value": "Analytics e métricas",
-          "label": "D) Ferramentas para medir resultados"
+          "value": "Curso online",
+          "label": "D) Curso online (produto escalável)"
         },
         {
-          "value": "IA para conteúdo",
-          "label": "E) Inteligência Artificial para criar conteúdo"
-        },
-        {
-          "value": "Nenhuma ainda",
-          "label": "F) Não uso nenhuma ferramenta ainda"
+          "value": "Comunidade/clube",
+          "label": "E) Comunidade ou clube (networking)"
         }
       ]
     },
     {
       "id": "q8",
       "type": "radio",
-      "title": "8) Como você prefere aprender novas estratégias de marketing digital?",
+      "title": "8) Você prefere um modelo de negócio:",
       "required": true,
       "options": [
         {
-          "value": "Vídeos práticos passo a passo",
-          "label": "A) Vídeos práticos mostrando como fazer"
+          "value": "Premium alto valor",
+          "label": "A) Premium de alto valor (poucos clientes, preço alto)"
         },
         {
-          "value": "Templates e exemplos prontos",
-          "label": "B) Templates prontos que posso adaptar"
+          "value": "Leve e escalável",
+          "label": "B) Leve e escalável (muitos clientes, preço menor)"
         },
         {
-          "value": "Mentoria individual",
-          "label": "C) Mentoria individual focada no meu negócio"
+          "value": "Recorrente mensal",
+          "label": "C) Recorrente mensal (previsibilidade)"
         },
         {
-          "value": "Grupo de empresários",
-          "label": "D) Grupo com outros empresários trocando experiências"
+          "value": "Projetos pontuais",
+          "label": "D) Projetos pontuais (flexibilidade)"
         },
         {
-          "value": "Mistura de tudo",
-          "label": "E) Um pouco de cada - vídeos, templates e mentoria"
+          "value": "Misto - vários formatos",
+          "label": "E) Misto - combinando vários formatos"
         }
       ]
     },
     {
       "id": "q9",
       "type": "checkbox",
-      "title": "9) Quais são suas maiores dificuldades técnicas? (pode marcar várias)",
+      "title": "9) Quais atividades você mais gosta de fazer? (pode marcar várias)",
       "required": false,
       "options": [
         {
-          "value": "Criar artes bonitas",
-          "label": "A) Criar artes e designs que chamem atenção"
+          "value": "Dar feedbacks personalizados",
+          "label": "A) Dar feedbacks personalizados"
         },
         {
-          "value": "Escrever legendas que vendem",
-          "label": "B) Escrever textos que realmente vendem"
+          "value": "Criar diagnósticos detalhados",
+          "label": "B) Criar diagnósticos e planos de ação"
         },
         {
-          "value": "Gravar e editar vídeos",
-          "label": "C) Gravar e editar vídeos de qualidade"
+          "value": "Produzir conteúdo visual",
+          "label": "C) Produzir conteúdo e posts"
         },
         {
-          "value": "Entender métricas",
-          "label": "D) Entender se está dando resultado"
+          "value": "Estruturar aulas e módulos",
+          "label": "D) Estruturar aulas e módulos educativos"
         },
         {
-          "value": "Criar estratégia de conteúdo",
-          "label": "E) Planejar o que postar e quando"
-        },
-        {
-          "value": "Interagir com seguidores",
-          "label": "F) Responder comentários e DMs de forma estratégica"
+          "value": "Moderar discussões em grupo",
+          "label": "E) Moderar discussões e facilitar networking"
         }
       ]
     },
     {
       "id": "q10",
       "type": "radio",
-      "title": "10) Qual resultado faria você pensar: 'Valeu a pena investir na mentoria'?",
+      "title": "10) Como você se sente em relação ao acompanhamento de resultados?",
       "required": true,
       "options": [
         {
-          "value": "Dobrar seguidores em 90 dias",
-          "label": "A) Dobrar o número de seguidores em 90 dias"
+          "value": "Gosto de acompanhar de perto",
+          "label": "A) Gosto de acompanhar de perto e cobrar execução"
         },
         {
-          "value": "Gerar 10+ leads por mês",
-          "label": "B) Conseguir 10+ leads qualificados por mês"
+          "value": "Prefiro entregar o plano pronto",
+          "label": "B) Prefiro entregar o plano pronto e deixar executar"
         },
         {
-          "value": "Aumentar vendas em 30%",
-          "label": "C) Aumentar as vendas em pelo menos 30%"
+          "value": "Gosto de executar eu mesma",
+          "label": "C) Gosto de executar eu mesma e entregar resultados"
         },
         {
-          "value": "Independência total",
-          "label": "D) Nunca mais precisar de agência ou freelancer"
+          "value": "Ensino e deixo aplicar",
+          "label": "D) Ensino bem e deixo cada um aplicar"
         },
         {
-          "value": "Reconhecimento como autoridade",
-          "label": "E) Ser reconhecido como referência no meu setor"
+          "value": "Facilito a troca de experiências",
+          "label": "E) Facilito a troca de experiências entre participantes"
         }
       ]
     },
     {
       "id": "q11",
-      "type": "checkbox",
-      "title": "11) Que tipo de suporte você gostaria de ter durante a mentoria? (pode marcar várias)",
-      "required": false,
+      "type": "radio",
+      "title": "11) Qual formato de interação você prefere?",
+      "required": true,
       "options": [
         {
-          "value": "Grupo no WhatsApp",
-          "label": "A) Grupo no WhatsApp para tirar dúvidas rápidas"
+          "value": "Encontros semanais individuais",
+          "label": "A) Encontros semanais individuais ou em pequenos grupos"
         },
         {
-          "value": "Lives semanais",
-          "label": "B) Lives semanais para acompanhar o progresso"
+          "value": "Reuniões pontuais de diagnóstico",
+          "label": "B) Reuniões pontuais para diagnóstico e entrega"
         },
         {
-          "value": "Revisão de conteúdo",
-          "label": "C) Revisão dos meus posts antes de publicar"
+          "value": "Comunicação por WhatsApp/email",
+          "label": "C) Comunicação constante por WhatsApp ou email"
         },
         {
-          "value": "Templates personalizados",
-          "label": "D) Templates personalizados para o meu negócio"
+          "value": "Aulas estruturadas online",
+          "label": "D) Aulas estruturadas com cronograma definido"
         },
         {
-          "value": "Análise de métricas",
-          "label": "E) Análise mensal dos resultados e ajustes"
+          "value": "Encontros de networking",
+          "label": "E) Encontros de networking e troca de experiências"
         }
       ]
     },
     {
       "id": "q12",
-      "type": "radio",
-      "title": "12) Qual é o seu orçamento mensal para investir em marketing digital?",
-      "required": true,
+      "type": "checkbox",
+      "title": "12) Quais habilidades você já tem ou gostaria de desenvolver? (pode marcar várias)",
+      "required": false,
       "options": [
         {
-          "value": "Até R$ 500",
-          "label": "A) Até R$ 500 (começando devagar)"
+          "value": "Orientação e coaching",
+          "label": "A) Orientação e coaching empresarial"
         },
         {
-          "value": "R$ 500 a R$ 1.500",
-          "label": "B) Entre R$ 500 e R$ 1.500 (investimento moderado)"
+          "value": "Análise estratégica",
+          "label": "B) Análise estratégica e planejamento"
         },
         {
-          "value": "R$ 1.500 a R$ 3.000",
-          "label": "C) Entre R$ 1.500 e R$ 3.000 (investimento sério)"
+          "value": "Criação de conteúdo",
+          "label": "C) Criação de conteúdo e gestão de redes"
         },
         {
-          "value": "Mais de R$ 3.000",
-          "label": "D) Mais de R$ 3.000 (investimento alto)"
+          "value": "Didática e ensino",
+          "label": "D) Didática e estruturação de conteúdo educativo"
         },
         {
-          "value": "Ainda definindo",
-          "label": "E) Ainda estou definindo o orçamento"
+          "value": "Facilitação de grupos",
+          "label": "E) Facilitação de grupos e moderação"
         }
       ]
     },
     {
       "id": "q13",
-      "type": "checkbox",
-      "title": "13) O que mais te preocupa em relação ao marketing digital? (pode marcar várias)",
-      "required": false,
+      "type": "radio",
+      "title": "13) Como você lida com a responsabilidade pelos resultados dos clientes?",
+      "required": true,
       "options": [
         {
-          "value": "Gastar dinheiro sem retorno",
-          "label": "A) Gastar dinheiro e não ver resultado"
+          "value": "Compartilho a responsabilidade",
+          "label": "A) Compartilho a responsabilidade - oriento e cobro execução"
         },
         {
-          "value": "Não ter tempo para manter",
-          "label": "B) Começar bem mas não conseguir manter"
+          "value": "Entrego soluções aplicáveis",
+          "label": "B) Entrego soluções aplicáveis - a execução é com eles"
         },
         {
-          "value": "Concorrência muito forte",
-          "label": "C) Concorrência muito forte no meu setor"
+          "value": "Assumo total responsabilidade",
+          "label": "C) Assumo total responsabilidade - executo para entregar resultados"
         },
         {
-          "value": "Mudanças constantes",
-          "label": "D) Algoritmos e regras mudando sempre"
+          "value": "Ensino bem - aplicação é individual",
+          "label": "D) Ensino bem - a aplicação depende de cada um"
         },
         {
-          "value": "Exposição pessoal",
-          "label": "E) Ter que me expor muito nas redes sociais"
-        },
-        {
-          "value": "Críticas e comentários negativos",
-          "label": "F) Lidar com críticas e comentários negativos"
+          "value": "Facilito o aprendizado coletivo",
+          "label": "E) Facilito o aprendizado coletivo - resultados vêm da troca"
         }
       ]
     },
     {
       "id": "q14",
       "type": "radio",
-      "title": "14) Em quanto tempo você gostaria de ver os primeiros resultados?",
+      "title": "14) Qual dessas situações te deixaria mais realizada profissionalmente?",
       "required": true,
       "options": [
         {
-          "value": "30 dias",
-          "label": "A) 30 dias (resultados rápidos)"
+          "value": "Cliente crescendo com minha orientação",
+          "label": "A) Ver um cliente crescendo mês a mês com minha orientação"
         },
         {
-          "value": "60 dias",
-          "label": "B) 60 dias (prazo realista)"
+          "value": "Plano estratégico sendo executado",
+          "label": "B) Ver meu plano estratégico sendo executado com sucesso"
         },
         {
-          "value": "90 dias",
-          "label": "C) 90 dias (construção sólida)"
+          "value": "Resultados diretos que entreguei",
+          "label": "C) Ver os resultados diretos que entreguei funcionando"
         },
         {
-          "value": "6 meses",
-          "label": "D) 6 meses (investimento de longo prazo)"
+          "value": "Alunos aplicando o que ensinei",
+          "label": "D) Ver meus alunos aplicando o que ensinei"
         },
         {
-          "value": "Sem pressa",
-          "label": "E) Sem pressa - quero fazer direito"
+          "value": "Comunidade próspera que criei",
+          "label": "E) Ver uma comunidade próspera que ajudei a criar"
         }
       ]
     },
     {
       "id": "q15",
       "type": "textarea",
-      "title": "15) Conte mais sobre seu negócio e seus desafios específicos:",
+      "title": "15) Descreva sua experiência atual e o que mais te atrai na ideia de trabalhar com marketing digital:",
       "required": false,
-      "placeholder": "Fale sobre seu setor, principais concorrentes, o que já tentou fazer nas redes sociais, maiores frustrações, ou qualquer contexto que possa ajudar a personalizar a mentoria para você..."
+      "placeholder": "Conte sobre sua experiência profissional, o que já fez relacionado a marketing/negócios, por que quer trabalhar nessa área, e qual formato de trabalho mais desperta sua curiosidade..."
     }
   ]
 }
